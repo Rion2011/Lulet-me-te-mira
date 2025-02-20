@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llojet e Luleve</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #9e0468;
+        }
+        h1 {
+            background-color: #ff4081;
+            color: white;
+            padding: 15px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .flower-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .flower-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .flower-card h2 {
+            color: #ff4081;
+        }
+        .flower-card p {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Llojet e Luleve</h1>
+    <div class="container" id="flowers-container">
+        <!-- Lulet do të shfaqen këtu me JavaScript -->
+    </div>
+    <script>
+        const flowers = [
+            { name: "Trëndafili", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Rose_Red_Beauty.JPG/800px-Rose_Red_Beauty.JPG", description: "Trëndafili simbolizon dashurinë dhe bukurinë. Përdoret në parfumeri dhe kozmetikë." },
+            { name: "Zambaku", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Lilium_candidum_%28Lily%29.jpg/800px-Lilium_candidum_%28Lily%29.jpg", description: "Zambaku është simbol i pastërtisë dhe qetësisë. Rritet kryesisht në zona me klimë të butë." },
+            { name: "Orkidea", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Orchidaceae_flower_2005_7.jpg/800px-Orchidaceae_flower_2005_7.jpg", description: "Orkideja është një lule ekzotike dhe elegante. Ka mbi 25,000 lloje të ndryshme." },
+            { name: "Luledielli", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg", description: "Luledielli simbolizon energjinë dhe gëzimin. Ndjek lëvizjen e diellit gjatë ditës." },
+            { name: "Tulipani", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tulip_-_floriade_canberra.jpg/800px-Tulip_-_floriade_canberra.jpg", description: "Tulipani është simbol i pranverës dhe freskisë. Origjina e tij është nga Perandoria Osmane." },
+            { name: "Margarita", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bellis_perennis_white.JPG/800px-Bellis_perennis_white.JPG", description: "Margarita përfaqëson pafajësinë dhe pastërtinë. Është një lule shumë e njohur në kopshte." },
+            { name: "Lulja e Qershisë", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cherry_Blossom_%282008%29.jpg/800px-Cherry_Blossom_%282008%29.jpg", description: "Lulja e qershisë simbolizon rilindjen dhe kalueshmërinë e jetës. Është shumë popullore në Japoni." },
+            { name: "Zymbyli", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hyacinth_%28aka%29.JPG/800px-Hyacinth_%28aka%29.JPG", description: "Zymbyli është një lule me aromë të ëmbël dhe ngjyra të ndryshme. Shumë e përdorur për dekorime." }
+        ];
+
+        const container = document.getElementById("flowers-container");
+        
+        flowers.forEach(flower => {
+            const card = document.createElement("div");
+            card.classList.add("flower-card");
+            card.innerHTML = `
+                <img src="${flower.image}" alt="${flower.name}">
+                <h2>${flower.name}</h2>
+                <p>${flower.description}</p>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
